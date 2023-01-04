@@ -1,0 +1,24 @@
+body{
+    background-color: gray;
+}
+
+#sketch_content{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#container{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content:flex-start;
+}
+
+.square{
+    height: 25px;
+    width: 25px;
+    flex: auto;
+    background-color: blue;
+}
