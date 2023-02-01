@@ -11,13 +11,10 @@ div.classList.add("square");
 container.appendChild(div);
 }
 
-const button = document.querySelectorAll(".square");
+const square = document.querySelectorAll(".square");
 
-let squareArray = Array.from(button);
+let squareArray = Array.from(square);
 
-function changeColor(event){
-   
-}
 
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
@@ -34,13 +31,34 @@ squareArray.forEach(item => {
     item.addEventListener("mousedown", changeColor);
 });
 
-// squareArray.forEach(item => {
-// item.addEventListener("mouseenter" , () => {
-//     item.style.cssText = " background-color: white;";
+let gridBtn = document.querySelector("#squareSize");
 
-// });
 
-//     });
+function changeGrid(){
+  
+ let newGrid = prompt("Enter in grid size");
+
+ let newGridSize = Math.pow(newGrid , 2);
+
+while(container.hasChildNodes()){
+    container.removeChild(container.firstChild);
+};
+
+
+
+for(let i = 0; i < newGridSize; i++)
+{
+const div = document.createElement('div');
+div.classList.add("square");
+
+
+container.appendChild(div);
+}
+
+};
+
+gridBtn.addEventListener("click", changeGrid);
+
 
 
 
